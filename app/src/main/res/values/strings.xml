@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">"Express Calculator "</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="action_clear">Clear</string>
+    <string name="action_quit">Quit</string>
+
+    <color name="black">#000</color>
+    <color name="blue">#0000FF</color>
+    <color name="bluePurple">#1E90FF</color>
+    <color name="darkBlue">#00008B</color>
+    <color name="green">#008000</color>
+    <color name="purple">#800080</color>
+    <color name="red">#DC143C</color>
+
+
+    <color name="maroon">#800000</color>
+
+    <string name="number">№</string>
+    <string name="Price">Заказ (грн)</string>
+    <string name="Passage">Проезд  </string>
+    <string name="Phone">Связь</string>
+    <string name="Bills">Купюры</string>
+    <string name="Amount">Кол   --   во</string>
+    <string name="Summa">Σ: </string>
+
+    <string name="Results">Итоги: </string>
+    <string name="PriceResults">Заказы: </string>
+    <string name="txtPriceInfo">Заказы без Проезда</string>
+    <string name="txtPricePassageResults">Заказы с проездом</string>
+    <string name="txtPassagedResults">Проезд+Cвязь: </string>
+    <string name="txtPassageInfo">Деньги за проезд и связь</string>
+    <string name="txtMoneyResults">Касса: </string>
+    <string name="txtMoneyInfo">Сколько денег ты принес</string>
+
+
+    <string name="fiveHundred">500: </string>
+    <string name="twoHumdred">200: </string>
+    <string name="oneHundred">100: </string>
+    <string name="fifty">50: </string>
+    <string name="twenty">20: </string>
+    <string name="ten">10: </string>
+    <string name="five">5: </string>
+    <string name="two">2: </string>
+    <string name="one">1: </string>
+    <string name="textOut"> инфа: </string>
+</resources>
