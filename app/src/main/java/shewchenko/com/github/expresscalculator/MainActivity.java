@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -174,6 +175,58 @@ public class MainActivity extends ActionBarActivity {
         int resultPriceMinusPassegePhone = resultPrice - resultPassagePhone;
         edPriceMinusPassagePhone.setText(""+resultPriceMinusPassegePhone);
         edPricePassagePhoneResults.setText(""+resultPriceMinusPassegePhone);
+
+
+        if (resultPriceMinusPassegePhone < resultAmount){
+
+            if (resultPassagePhone !=0){
+                int resultOutDifferent = resultAmount - resultPriceMinusPassegePhone;
+                edOut.setText(""+resultOutDifferent);
+                txtOut1.setText("столько нужно вытащить с кассы " + resultOutDifferent + "");
+                //Toast.makeText(this, "можно дальше не считать", Toast.LENGTH_LONG).show();
+            }else {
+                int resultOut = resultAmount - resultPrice;
+                edOut.setText(""+resultOut);
+                txtOut1.setText("Без проезда. С кассы нужно взять "+resultOut + " ");
+            }
+        }
+
+        //if (resultPrice !=0){
+         //   Toast.makeText(this, "можно дальше не считать", Toast.LENGTH_LONG).show();
+        //}
+
+        if (resultPriceMinusPassegePhone > resultAmount){
+
+            if(resultPassagePhone !=0){
+                int resultOutDiff = resultPriceMinusPassegePhone - resultAmount;
+                edOut.setText(""+resultOutDiff);
+                txtOut1.setText("столько нужно внести в кассу "+resultOutDiff+"");
+            } else {
+                int resultOutPriceAmount = resultPrice - resultAmount;
+                edOut.setText("Без проезда. В кассу нужно внести "+ resultOutPriceAmount+" ");
+            }
+        //    if (resultAmount !=0){
+        //        Toast.makeText(this, "в кассе денег не хватает", Toast.LENGTH_LONG).show();
+        //    }
+        }
+
+        if (resultPriceMinusPassegePhone == resultAmount){
+            if (resultPassagePhone !=0){
+                edOut.setText("теперь всё хорошо, проезд учтён");
+                txtOut1.setText("можно идти сдавать кассу");
+            }else {
+                edOut.setText("а проезд?!");
+                txtOut1.setText("но, всё сошлось и без проезда ");
+                if (resultPrice !=0 && resultAmount !=0){
+                    //Toast.makeText(this, "Денег одинаково. Можно не вводить", Toast.LENGTH_LONG).show();
+                }
+
+                if (resultPrice == 0 || resultAmount == 0){
+                    edOut.setText("поля пусты");
+                    txtOut1.setText("Заказы и Купюры");
+                }
+            }
+        }
 
 
 
