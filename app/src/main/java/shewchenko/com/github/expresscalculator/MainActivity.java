@@ -21,11 +21,11 @@ public class MainActivity extends ActionBarActivity {
             Amount500, Amount200, Amount100, Amount50, Amount20, Amount10, Amount5,
             Amount2, Amount1,
 
-            edSumPrice, edPriceResults;
+            edSumPrice, edSumPassage;
 
     int     price1, price2, price3, price4, price5, price6, price7, price8, price9,
 
-            passaage1, passage2, passage3, passage4, passage5, passage6, passage7,
+            passage1, passage2, passage3, passage4, passage5, passage6, passage7,
             passage8, passage9,
 
             phone1, phone2, phone3, phone4, phone5, phone6, phone7, phone8, phone9,
@@ -71,15 +71,15 @@ public class MainActivity extends ActionBarActivity {
         Passage8 = (EditText) findViewById(R.id.edPassage8);
         Passage9 = (EditText) findViewById(R.id.edPassage9);
 
-        Passage1.addTextChangedListener(edPsassage1Watcher);
-        Passage2.addTextChangedListener(edPsassage2Watcher);
-        Passage3.addTextChangedListener(edPsassage3Watcher);
-        Passage4.addTextChangedListener(edPsassage4Watcher);
-        Passage5.addTextChangedListener(edPsassage5Watcher);
-        Passage6.addTextChangedListener(edPsassage6Watcher);
-        Passage7.addTextChangedListener(edPsassage7Watcher);
-        Passage8.addTextChangedListener(edPsassage8Watcher);
-        Passage9.addTextChangedListener(edPsassage9Watcher);
+        Passage1.addTextChangedListener(edPassage1Watcher);
+        Passage2.addTextChangedListener(edPassage2Watcher);
+        Passage3.addTextChangedListener(edPassage3Watcher);
+        Passage4.addTextChangedListener(edPassage4Watcher);
+        Passage5.addTextChangedListener(edPassage5Watcher);
+        Passage6.addTextChangedListener(edPassage6Watcher);
+        Passage7.addTextChangedListener(edPassage7Watcher);
+        Passage8.addTextChangedListener(edPassage8Watcher);
+        Passage9.addTextChangedListener(edPassage9Watcher);
 
 
         Phone1 = (EditText) findViewById(R.id.edPhone1);
@@ -124,12 +124,8 @@ public class MainActivity extends ActionBarActivity {
         Amount500.addTextChangedListener(edAmount500Watcher);
 
 
-
-
-
-
         edSumPrice = (EditText) findViewById(R.id.edSumPrice);
-
+        edSumPassage = (EditText) findViewById(R.id.edSumPassage);
 
     }
 
@@ -138,6 +134,14 @@ public class MainActivity extends ActionBarActivity {
         int resultPrice = price1 + price2 + price3 + price4 + price5 + price6 + price7 + price8 + price9;
         edSumPrice.setText(" " + resultPrice);
         return resultPrice;
+    }
+
+    public int setPassage(){
+
+        int resultPassage = passage1+passage2+passage3+passage4+passage5+passage6+passage7+passage8
+                +passage9;
+        edSumPassage.setText(" "+resultPassage);
+        return resultPassage;
     }
 
     @Override
@@ -359,6 +363,212 @@ public class MainActivity extends ActionBarActivity {
                 price9 = 0;
             }
             setPrice();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+
+    TextWatcher edPassage1Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                passage1 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                passage1 = 0;
+            }
+            setPassage();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPassage2Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                passage2 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                passage2 = 0;
+            }
+            setPassage();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPassage3Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                passage3 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                passage3 = 0;
+            }
+            setPassage();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPassage4Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                passage4 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                passage4 = 0;
+            }
+            setPassage();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPassage5Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                passage5 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                passage5 = 0;
+            }
+
+            setPassage();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPassage6Watcher= new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                passage6 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                passage6 = 0;
+            }
+            setPassage();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPassage7Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            try {
+                passage7 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                passage7 = 0;
+            }
+            setPassage();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPassage8Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            try {
+                passage8 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                passage8 = 0;
+            }
+            setPassage();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPassage9Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            try {
+                passage9 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                passage9 = 0;
+            }
+            setPassage();
         }
 
         @Override
