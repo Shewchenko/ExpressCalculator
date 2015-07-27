@@ -7,6 +7,7 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -21,7 +22,11 @@ public class MainActivity extends ActionBarActivity {
             Amount500, Amount200, Amount100, Amount50, Amount20, Amount10, Amount5,
             Amount2, Amount1,
 
-            edSumPrice, edSumPassage, edSumPhone, edSumAmount;
+            edSumPrice, edSumPassage, edSumPhone, edSumAmount,
+            edSumPassagePhone, edPriceMinusPassagePhone, edPriceResults,
+            edPricePassagePhoneResults, edPassagePhone, edMoneyResult, edOut;
+
+    TextView txtOut1;
 
     int     price1, price2, price3, price4, price5, price6, price7, price8, price9,
 
@@ -129,35 +134,53 @@ public class MainActivity extends ActionBarActivity {
         edSumPhone = (EditText)findViewById(R.id.edSumPhone);
         edSumAmount = (EditText)findViewById(R.id.edSumAmount);
 
+        edSumPassagePhone = (EditText)findViewById(R.id.edPassagePhone);
+        edPriceMinusPassagePhone = (EditText)findViewById(R.id.edPricePassagePhone);
+        edPriceResults = (EditText) findViewById(R.id.edPriceResults);
+        edPricePassagePhoneResults = (EditText)findViewById(R.id.edPricePassagePhoneResults);
+        edSumPassagePhone =(EditText)findViewById(R.id.edPassageResultsInfo);
+        edMoneyResult = (EditText)findViewById(R.id.edMoneyResults);
+        edPassagePhone = (EditText)findViewById(R.id.edPassagePhone);
+
+        edOut = (EditText)findViewById(R.id.edOut);
+        txtOut1 = (TextView)findViewById(R.id.txtOut1);
+
     }
 
-    public int setPrice() {
+
+
+    void setCalculation(){
 
         int resultPrice = price1 + price2 + price3 + price4 + price5 + price6 + price7 + price8 + price9;
         edSumPrice.setText(" " + resultPrice);
-        return resultPrice;
-    }
-
-    public int setPassage(){
+        edPriceResults.setText(""+resultPrice);
 
         int resultPassage = passage1+passage2+passage3+passage4+passage5+passage6+passage7+passage8
                 +passage9;
         edSumPassage.setText(" "+resultPassage);
-        return resultPassage;
-    }
 
-    public int setPhone(){
         int resultPhone = phone1+phone2+phone3+phone4+phone5+phone6+phone7+phone8+phone9;
-        edSumPhone.setText(" "+ resultPhone);
-        return resultPhone;
-    }
+        edSumPhone.setText(" " + resultPhone);
 
-    public int setAmount(){
         int resultAmount = (amount500*500)+(amount200*200)+(amount100*100)
                 +(amount50*50)+(amount20*20)+(amount10*10)+(amount5*5)+(amount2*2)+amount1;
         edSumAmount.setText(" "+resultAmount);
-        return resultAmount;
+        edMoneyResult.setText(""+resultAmount);
+
+        int resultPassagePhone = resultPassage+resultPhone;
+        edSumPassagePhone.setText(""+resultPassagePhone);
+        edPassagePhone.setText(""+resultPassagePhone);
+
+        int resultPriceMinusPassegePhone = resultPrice - resultPassagePhone;
+        edPriceMinusPassagePhone.setText(""+resultPriceMinusPassegePhone);
+        edPricePassagePhoneResults.setText(""+resultPriceMinusPassegePhone);
+
+
+
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -195,7 +218,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 price1 = 0;
             }
-            setPrice();
+            setCalculation();
         }
 
         @Override
@@ -218,7 +241,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 price2 = 0;
             }
-            setPrice();
+            setCalculation();
         }
 
         @Override
@@ -241,7 +264,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 price3 = 0;
             }
-            setPrice();
+            setCalculation();
         }
 
         @Override
@@ -264,7 +287,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 price4 = 0;
             }
-            setPrice();
+            setCalculation();
         }
 
         @Override
@@ -288,7 +311,7 @@ public class MainActivity extends ActionBarActivity {
                 price5 = 0;
             }
 
-            setPrice();
+            setCalculation();
         }
 
         @Override
@@ -311,7 +334,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 price6 = 0;
             }
-            setPrice();
+            setCalculation();
         }
 
         @Override
@@ -333,7 +356,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 price7 = 0;
             }
-            setPrice();
+            setCalculation();
         }
 
         @Override
@@ -355,7 +378,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 price8 = 0;
             }
-            setPrice();
+            setCalculation();
         }
 
         @Override
@@ -377,7 +400,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 price9 = 0;
             }
-            setPrice();
+            setCalculation();
         }
 
         @Override
@@ -401,7 +424,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 passage1 = 0;
             }
-            setPassage();
+            setCalculation();
         }
 
         @Override
@@ -424,7 +447,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 passage2 = 0;
             }
-            setPassage();
+            setCalculation();
         }
 
         @Override
@@ -447,7 +470,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 passage3 = 0;
             }
-            setPassage();
+            setCalculation();
         }
 
         @Override
@@ -470,7 +493,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 passage4 = 0;
             }
-            setPassage();
+            setCalculation();
         }
 
         @Override
@@ -494,7 +517,7 @@ public class MainActivity extends ActionBarActivity {
                 passage5 = 0;
             }
 
-            setPassage();
+            setCalculation();
         }
 
         @Override
@@ -517,7 +540,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 passage6 = 0;
             }
-            setPassage();
+            setCalculation();
         }
 
         @Override
@@ -539,7 +562,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 passage7 = 0;
             }
-            setPassage();
+            setCalculation();
         }
 
         @Override
@@ -561,7 +584,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 passage8 = 0;
             }
-            setPassage();
+            setCalculation();
         }
 
         @Override
@@ -583,7 +606,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 passage9 = 0;
             }
-            setPassage();
+            setCalculation();
         }
 
         @Override
@@ -606,7 +629,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 phone1 = 0;
             }
-            setPhone();
+            setCalculation();
         }
 
         @Override
@@ -629,7 +652,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 phone2 = 0;
             }
-            setPhone();
+            setCalculation();
         }
 
         @Override
@@ -652,7 +675,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 phone3 = 0;
             }
-            setPhone();
+            setCalculation();
         }
 
         @Override
@@ -675,7 +698,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 phone4 = 0;
             }
-            setPhone();
+            setCalculation();
         }
 
         @Override
@@ -699,7 +722,7 @@ public class MainActivity extends ActionBarActivity {
                 phone5 = 0;
             }
 
-            setPhone();
+            setCalculation();
         }
 
         @Override
@@ -722,7 +745,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 phone6 = 0;
             }
-            setPhone();
+            setCalculation();
         }
 
         @Override
@@ -744,7 +767,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 phone7 = 0;
             }
-            setPhone();
+            setCalculation();
         }
 
         @Override
@@ -766,7 +789,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 phone8 = 0;
             }
-            setPhone();
+            setCalculation();
         }
 
         @Override
@@ -788,7 +811,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 phone9 = 0;
             }
-            setPhone();
+            setCalculation();
         }
 
         @Override
@@ -811,7 +834,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 amount500 = 0;
             }
-            setAmount();
+            setCalculation();
         }
 
         @Override
@@ -834,7 +857,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 amount200 = 0;
             }
-            setAmount();
+            setCalculation();
         }
 
         @Override
@@ -857,7 +880,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 amount100 = 0;
             }
-            setAmount();
+            setCalculation();
         }
 
         @Override
@@ -880,7 +903,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 amount50 = 0;
             }
-            setAmount();
+            setCalculation();
         }
 
         @Override
@@ -904,7 +927,7 @@ public class MainActivity extends ActionBarActivity {
                 amount20 = 0;
             }
 
-            setAmount();
+            setCalculation();
         }
 
         @Override
@@ -927,7 +950,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 amount10 = 0;
             }
-            setAmount();
+            setCalculation();
         }
 
         @Override
@@ -949,7 +972,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 amount5 = 0;
             }
-            setAmount();
+            setCalculation();
         }
 
         @Override
@@ -971,7 +994,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 amount2 = 0;
             }
-            setAmount();
+            setCalculation();
         }
 
         @Override
@@ -993,7 +1016,7 @@ public class MainActivity extends ActionBarActivity {
             } catch (NumberFormatException e) {
                 amount1 = 0;
             }
-            setAmount();
+            setCalculation();
         }
 
         @Override
