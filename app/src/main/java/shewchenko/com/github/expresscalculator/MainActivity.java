@@ -21,7 +21,7 @@ public class MainActivity extends ActionBarActivity {
             Amount500, Amount200, Amount100, Amount50, Amount20, Amount10, Amount5,
             Amount2, Amount1,
 
-            edSumPrice, edSumPassage, edSumPhone;
+            edSumPrice, edSumPassage, edSumPhone, edSumAmount;
 
     int     price1, price2, price3, price4, price5, price6, price7, price8, price9,
 
@@ -114,19 +114,20 @@ public class MainActivity extends ActionBarActivity {
         Amount1 =(EditText) findViewById(R.id.edAmount1);
 
         Amount500.addTextChangedListener(edAmount500Watcher);
-        Amount500.addTextChangedListener(edAmount500Watcher);
-        Amount500.addTextChangedListener(edAmount500Watcher);
-        Amount500.addTextChangedListener(edAmount500Watcher);
-        Amount500.addTextChangedListener(edAmount500Watcher);
-        Amount500.addTextChangedListener(edAmount500Watcher);
-        Amount500.addTextChangedListener(edAmount500Watcher);
-        Amount500.addTextChangedListener(edAmount500Watcher);
-        Amount500.addTextChangedListener(edAmount500Watcher);
+        Amount200.addTextChangedListener(edAmount200Watcher);
+        Amount100.addTextChangedListener(edAmount100Watcher);
+        Amount50.addTextChangedListener(edAmount50Watcher);
+        Amount20.addTextChangedListener(edAmount20Watcher);
+        Amount10.addTextChangedListener(edAmount10Watcher);
+        Amount5.addTextChangedListener(edAmount5Watcher);
+        Amount2.addTextChangedListener(edAmount2Watcher);
+        Amount1.addTextChangedListener(edAmount1Watcher);
 
 
         edSumPrice = (EditText) findViewById(R.id.edSumPrice);
         edSumPassage = (EditText) findViewById(R.id.edSumPassage);
         edSumPhone = (EditText)findViewById(R.id.edSumPhone);
+        edSumAmount = (EditText)findViewById(R.id.edSumAmount);
 
     }
 
@@ -149,6 +150,13 @@ public class MainActivity extends ActionBarActivity {
         int resultPhone = phone1+phone2+phone3+phone4+phone5+phone6+phone7+phone8+phone9;
         edSumPhone.setText(" "+ resultPhone);
         return resultPhone;
+    }
+
+    public int setAmount(){
+        int resultAmount = (amount500*500)+(amount200*200)+(amount100*100)
+                +(amount50*50)+(amount20*20)+(amount10*10)+(amount5*5)+(amount2*2)+amount1;
+        edSumAmount.setText(" "+resultAmount);
+        return resultAmount;
     }
 
     @Override
@@ -781,6 +789,211 @@ public class MainActivity extends ActionBarActivity {
                 phone9 = 0;
             }
             setPhone();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    TextWatcher edAmount500Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                amount500 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                amount500 = 0;
+            }
+            setAmount();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edAmount200Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                amount200 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                amount200 = 0;
+            }
+            setAmount();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edAmount100Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                amount100 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                amount100 = 0;
+            }
+            setAmount();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edAmount50Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                amount50 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                amount50 = 0;
+            }
+            setAmount();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edAmount20Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                amount20 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                amount20 = 0;
+            }
+
+            setAmount();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edAmount10Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                amount10 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                amount10 = 0;
+            }
+            setAmount();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edAmount5Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            try {
+                amount5 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                amount5 = 0;
+            }
+            setAmount();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edAmount2Watcher= new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            try {
+                amount2 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                amount2 = 0;
+            }
+            setAmount();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edAmount1Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            try {
+                amount1 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                amount1 = 0;
+            }
+            setAmount();
         }
 
         @Override
