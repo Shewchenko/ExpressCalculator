@@ -21,7 +21,7 @@ public class MainActivity extends ActionBarActivity {
             Amount500, Amount200, Amount100, Amount50, Amount20, Amount10, Amount5,
             Amount2, Amount1,
 
-            edSumPrice, edSumPassage;
+            edSumPrice, edSumPassage, edSumPhone;
 
     int     price1, price2, price3, price4, price5, price6, price7, price8, price9,
 
@@ -126,6 +126,7 @@ public class MainActivity extends ActionBarActivity {
 
         edSumPrice = (EditText) findViewById(R.id.edSumPrice);
         edSumPassage = (EditText) findViewById(R.id.edSumPassage);
+        edSumPhone = (EditText)findViewById(R.id.edSumPhone);
 
     }
 
@@ -142,6 +143,12 @@ public class MainActivity extends ActionBarActivity {
                 +passage9;
         edSumPassage.setText(" "+resultPassage);
         return resultPassage;
+    }
+
+    public int setPhone(){
+        int resultPhone = phone1+phone2+phone3+phone4+phone5+phone6+phone7+phone8+phone9;
+        edSumPhone.setText(" "+ resultPhone);
+        return resultPhone;
     }
 
     @Override
@@ -569,6 +576,211 @@ public class MainActivity extends ActionBarActivity {
                 passage9 = 0;
             }
             setPassage();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    TextWatcher edPhone1Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                phone1 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                phone1 = 0;
+            }
+            setPhone();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPhone2Watcher= new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                phone2 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                phone2 = 0;
+            }
+            setPhone();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPhone3Watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                phone3 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                phone3 = 0;
+            }
+            setPhone();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPhone4Watcher= new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                phone4 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                phone4 = 0;
+            }
+            setPhone();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPhone5Watcher= new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                phone5 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                phone5 = 0;
+            }
+
+            setPhone();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPhone6Watcher= new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            try {
+                phone6 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                phone6 = 0;
+            }
+            setPhone();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPhone7Watcher= new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            try {
+                phone7 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                phone7 = 0;
+            }
+            setPhone();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPhone8Watcher= new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            try {
+                phone8 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                phone8 = 0;
+            }
+            setPhone();
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
+
+    private TextWatcher edPhone9Watcher= new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            try {
+                phone9 = Integer.parseInt(s.toString());
+            } catch (NumberFormatException e) {
+                phone9 = 0;
+            }
+            setPhone();
         }
 
         @Override
