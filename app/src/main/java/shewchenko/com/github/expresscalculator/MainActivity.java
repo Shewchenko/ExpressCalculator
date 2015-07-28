@@ -26,7 +26,7 @@ public class MainActivity extends ActionBarActivity {
             Amount500, Amount200, Amount100, Amount50, Amount20, Amount10, Amount5,
             Amount2, Amount1,
 
-            edSumPrice, edSumPassage, edSumPhone, edSumAmount,
+            edSumPrice, edSumPassage, edSumPhone, edSumAmount,edResultPassagePhone,
             edSumPassagePhone, edPriceMinusPassagePhone, edPriceResults,
             edPricePassagePhoneResults, edPassagePhone, edMoneyResult, edOut;
 
@@ -142,7 +142,7 @@ public class MainActivity extends ActionBarActivity {
         edPriceMinusPassagePhone = (EditText)findViewById(R.id.edPricePassagePhone);
         edPriceResults = (EditText) findViewById(R.id.edPriceResults);
         edPricePassagePhoneResults = (EditText)findViewById(R.id.edPricePassagePhoneResults);
-        edSumPassagePhone =(EditText)findViewById(R.id.edPassageResultsInfo);
+        edResultPassagePhone =(EditText)findViewById(R.id.edPassageResultsInfo);
         edMoneyResult = (EditText)findViewById(R.id.edMoneyResults);
         edPassagePhone = (EditText)findViewById(R.id.edPassagePhone);
 
@@ -173,7 +173,7 @@ public class MainActivity extends ActionBarActivity {
 
         int resultPassagePhone = resultPassage+resultPhone;
         edSumPassagePhone.setText(""+resultPassagePhone);
-        edPassagePhone.setText(""+resultPassagePhone);
+        edResultPassagePhone.setText(""+resultPassagePhone);
 
         int resultPriceMinusPassegePhone = resultPrice - resultPassagePhone;
         edPriceMinusPassagePhone.setText(""+resultPriceMinusPassegePhone);
@@ -351,9 +351,10 @@ public class MainActivity extends ActionBarActivity {
                Amount5.setText("");
                Amount2.setText("");
                Amount1.setText("");
-
-
-
+               break;
+           case MENU_QUIT_ID:
+               finish();
+               break;
 
        }
 
