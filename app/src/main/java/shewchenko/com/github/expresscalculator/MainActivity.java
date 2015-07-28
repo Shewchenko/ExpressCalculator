@@ -177,10 +177,71 @@ public class MainActivity extends ActionBarActivity {
         edPricePassagePhoneResults.setText(""+resultPriceMinusPassegePhone);
 
 
-        if (resultPriceMinusPassegePhone < resultAmount){
-
+     /*   if(resultPriceMinusPassegePhone < resultAmount){
             if (resultPassagePhone !=0){
-                int resultOutDifferent = resultAmount - resultPriceMinusPassegePhone;
+                int resultOut = resultAmount - resultPrice;
+                edOut.setText(""+resultOut);
+                txtOut1.setText("Без проезда. С кассы нужно взять "+resultOut + " ");
+            } else {
+                int resultOut = resultAmount - resultPriceMinusPassegePhone;
+                edOut.setText(""+resultOut);
+                txtOut1.setText(" С кассы нужно взять "+resultOut + " ");
+            }
+        }*/
+
+        if (resultPassagePhone==0){
+            if (resultPrice > resultAmount){
+                int resultOutDiff = resultPrice - resultAmount;
+                edOut.setText(""+resultOutDiff);
+                txtOut1.setText("Без проезда. Столько нужно внести в кассу "+resultOutDiff+"");
+            } if (resultPrice < resultAmount) {
+                    if (resultPrice == 0){
+                    edOut.setText(""+resultAmount);
+                    txtOut1.setText("Без проезда. Столько нужно положить в кассу "+ resultAmount);
+                    }else{
+                int resultOut = resultAmount - resultPrice;
+                edOut.setText(""+resultOut);
+                txtOut1.setText("Без проезда. С кассы нужно взять "+resultOut + " ");}
+            } if (resultPriceMinusPassegePhone == resultAmount){
+                edOut.setText("а проезд?!");
+                txtOut1.setText("но, всё сошлось и без проезда");
+            } if (resultPrice == 0 && resultAmount == 0) {
+                edOut.setText("поля пусты");
+                txtOut1.setText("Заказы и Купюры");
+            }
+        }
+
+        if (resultPassagePhone > 0){
+            if (resultPriceMinusPassegePhone > resultAmount){
+                int resultOutPriceMore = resultPriceMinusPassegePhone - resultAmount;
+                edOut.setText(""+resultOutPriceMore);
+                txtOut1.setText("В кассу нужно положить "+resultOutPriceMore + " ");
+            } if (resultPriceMinusPassegePhone< resultAmount){
+                if (resultPriceMinusPassegePhone > 0){
+                    int resultOutAmoutnMore = resultAmount - resultPriceMinusPassegePhone;
+                    edOut.setText(""+resultOutAmoutnMore);
+                    txtOut1.setText("с кассы нужно вытащить " + resultOutAmoutnMore + "");
+                } if (resultPriceMinusPassegePhone <= 0){
+                    int resultOutPriceLess = resultAmount + resultPriceMinusPassegePhone;
+                    edOut.setText(""+resultOutPriceLess);
+                    txtOut1.setText(" С кассы нужно вытащить " +resultOutPriceLess);
+                }
+            }if (resultPriceMinusPassegePhone == resultAmount) {
+                edOut.setText("Всё совпало");
+                txtOut1.setText("Проезд учтён, можно идти сдавать");
+            }
+        }
+
+
+
+
+
+
+       /* if (resultPriceMinusPassegePhone < resultAmount){
+
+            if (resultPassagePhone !=0 ){
+                int resultOutDifferent =  resultPriceMinusPassegePhone -resultAmount;
+
                 edOut.setText(""+resultOutDifferent);
                 txtOut1.setText("столько нужно вытащить с кассы " + resultOutDifferent + "");
                 //Toast.makeText(this, "можно дальше не считать", Toast.LENGTH_LONG).show();
@@ -203,7 +264,8 @@ public class MainActivity extends ActionBarActivity {
                 txtOut1.setText("столько нужно внести в кассу "+resultOutDiff+"");
             } else {
                 int resultOutPriceAmount = resultPrice - resultAmount;
-                edOut.setText("Без проезда. В кассу нужно внести "+ resultOutPriceAmount+" ");
+                edOut.setText(""+resultOutPriceAmount);
+                txtOut1.setText("Без проезда. В кассу нужно внести "+ resultOutPriceAmount+" ");
             }
         //    if (resultAmount !=0){
         //        Toast.makeText(this, "в кассе денег не хватает", Toast.LENGTH_LONG).show();
@@ -226,7 +288,7 @@ public class MainActivity extends ActionBarActivity {
                     txtOut1.setText("Заказы и Купюры");
                 }
             }
-        }
+        }*/
 
 
 
