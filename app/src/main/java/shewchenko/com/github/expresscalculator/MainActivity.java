@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
+    final int MENU_RESET_ID = 1;
+    final int MENU_QUIT_ID = 2;
+
     EditText Price1, Price2, Price3, Price4, Price5, Price6, Price7, Price8, Price9,
 
             Passage1, Passage2, Passage3, Passage4, Passage5, Passage6, Passage7,
@@ -300,21 +303,59 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        menu.add(0, MENU_RESET_ID, 0, "Reset");
+        menu.add(0, MENU_QUIT_ID, 0, "Quit");
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+       switch (item.getItemId()){
+           case MENU_RESET_ID:
+               Price1.setText("");
+               Price2.setText("");
+               Price3.setText("");
+               Price4.setText("");
+               Price5.setText("");
+               Price6.setText("");
+               Price7.setText("");
+               Price8.setText("");
+               Price9.setText("");
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+               Passage1.setText("");
+               Passage2.setText("");
+               Passage3.setText("");
+               Passage4.setText("");
+               Passage5.setText("");
+               Passage6.setText("");
+               Passage7.setText("");
+               Passage8.setText("");
+               Passage9.setText("");
+
+               Phone1.setText("");
+               Phone2.setText("");
+               Phone3.setText("");
+               Phone4.setText("");
+               Phone5.setText("");
+               Phone6.setText("");
+               Phone7.setText("");
+               Phone8.setText("");
+               Phone9.setText("");
+
+               Amount500.setText("");
+               Amount200.setText("");
+               Amount100.setText("");
+               Amount50.setText("");
+               Amount20.setText("");
+               Amount10.setText("");
+               Amount5.setText("");
+               Amount2.setText("");
+               Amount1.setText("");
+
+
+
+
+       }
 
         return super.onOptionsItemSelected(item);
     }
